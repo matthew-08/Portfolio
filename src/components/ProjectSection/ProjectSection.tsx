@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Flex, Heading, VStack } from '@chakra-ui/react'
+import { v4 as uuid } from 'uuid'
 import ProjectCard from '../Project/ProjectCard'
 import { Project } from '../../Types/types'
 import forum from '../../assets/forum.png'
@@ -56,6 +57,7 @@ export default function ProjectSection() {
             <VStack gap="1rem">
                 {projects.map((p) => (
                     <ProjectCard
+                        key={uuid()}
                         links={p.links}
                         projectDescription={p.projectDescription}
                         projectImg={p.projectImg}
