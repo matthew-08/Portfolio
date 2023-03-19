@@ -10,6 +10,7 @@ import {
     Center,
     Container,
     Box,
+    VStack,
 } from '@chakra-ui/react'
 import React from 'react'
 import { LinkIcon } from '@chakra-ui/icons'
@@ -17,31 +18,6 @@ import { Icon } from '@iconify/react'
 import { v4 as uuid } from 'uuid'
 import { Project, ProjectTech } from '../../Types/types'
 import folder from '../../assets/folder.svg'
-
-const getIcon = (tech: ProjectTech) => {
-    switch (tech) {
-        case 'express.js':
-            return 'logos:express'
-        case 'node.js':
-            return 'vscode-icons:folder-type-light-node'
-        case 'react':
-            return 'skill-icons:react-dark'
-        case 'postgresql':
-            return 'logos:postgresql'
-        case 'typescript':
-            return 'vscode-icons:file-type-typescript-official'
-        case 'firebase':
-            return 'vscode-icons:file-type-firebase'
-        case 'aws':
-            return 'logos:aws'
-        case 'redux':
-            return 'skill-icons:redux'
-        case 'redis':
-            return 'redis'
-        default:
-            return 'unhandled'
-    }
-}
 
 export default function ProjectCard({
     links,
@@ -55,8 +31,8 @@ export default function ProjectCard({
     const [isLargerThan900] = useMediaQuery('(min-width: 900px)')
     return (
         <Flex
-            minWidth="500px"
-            maxWidth="300px"
+            maxWidth={!isLargerThan500 ? '300px' : '450px'}
+            minWidth={!isLargerThan500 ? '350px' : '500px'}
             flexDir="column"
             minH="400px"
             backgroundColor="main.secondary"
@@ -69,29 +45,62 @@ export default function ProjectCard({
                 padding="1rem"
                 mb="1rem"
             >
-                <Heading>{projectName}</Heading>
+                <Image src={folder} maxW="30px" mr="auto" />
+                <Heading mr="auto">{projectName}</Heading>
             </Center>
-            <Flex
-                align="center"
-                justifyContent="center"
-                gap="0.2rem"
-                flexWrap="wrap"
-                px="4rem"
-                mb="3rem"
-            >
-                {projectTechUsed.map((tech) => {
-                    return (
-                        <Box
-                            borderRadius="10px"
-                            padding="0.5rem"
-                            fontFamily="Fira Code, monospace"
-                        >
-                            {tech.toUpperCase()}
-                        </Box>
-                    )
-                })}
+            <Flex padding="1rem" flexDir="column" flexGrow="1">
+                <Container minHeight="100px">
+                    <Flex
+                        align="center"
+                        justifyContent="center"
+                        gap="0.1rem"
+                        flexWrap="wrap"
+                        px={!isLargerThan500 ? '2rem' : '4rem'}
+                    >
+                        {projectTechUsed.map((tech) => {
+                            return (
+                                <Box
+                                    borderRadius="10px"
+                                    padding="0.2rem"
+                                    fontFamily="Fira Code, monospace"
+                                >
+                                    {tech.toUpperCase()}
+                                </Box>
+                            )
+                        })}
+                    </Flex>
+                </Container>
+                <Text px="1rem">{projectDescription}</Text>
+                <HStack mt="auto" ml="auto">
+                    <Button
+                        as="a"
+                        leftIcon={<LinkIcon width="30px" />}
+                        variant="solid"
+                        backgroundColor="purple.500"
+                        border="1px"
+                        borderColor="purple.500"
+                        fontSize="1rem"
+                        p="1.4rem"
+                        pl="1.2rem"
+                        justifyContent="space-between"
+                        href={links.live}
+                    >
+                        Live
+                    </Button>
+                    <Button
+                        as="a"
+                        border="1px"
+                        leftIcon={
+                            <Icon icon="material-symbols:code" width="30px" />
+                        }
+                        fontSize="1rem"
+                        p="1.4rem"
+                        href={links.github}
+                    >
+                        Code
+                    </Button>
+                </HStack>
             </Flex>
-            <Text px="4rem">{projectDescription}</Text>
         </Flex>
     )
 }

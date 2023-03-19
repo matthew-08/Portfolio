@@ -29,11 +29,3 @@ a:hover {
     filter: invert(74%) sepia(23%) saturate(748%) hue-rotate(213deg) brightness(103%) contrast(96%);
 }
 
-.card {
-    margin-bottom: 0px;
-    transition: margin 0.2s ease-in-out; 
-}
-
-.card:hover {
-    margin-bottom: 10px;
-}
