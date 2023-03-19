@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Heading, VStack } from '@chakra-ui/react'
+import { Box, Flex, Heading, VStack, HStack } from '@chakra-ui/react'
 import { v4 as uuid } from 'uuid'
 import ProjectCard from '../Project/ProjectCard'
 import { Project } from '../../Types/types'
@@ -11,8 +11,7 @@ const projects: Project[] = [
     {
         projectName: 'A Forum /',
         projectSubtitle: 'Forum Application',
-        projectDescription:
-            'A forum application built with react on the front-end and Firebase on the backend.  The user is able',
+        projectDescription: 'A full-stack forum application',
         projectTechUsed: ['typescript', 'react', 'firebase'],
         projectImg: forum,
         links: {
@@ -24,7 +23,7 @@ const projects: Project[] = [
         projectName: 'Noic /',
         projectSubtitle: 'Crypto Porfolio App',
         projectDescription:
-            'A full-stack crypto-currency portfolio / tracker built with React / TypeScript on the frontend and Express.js / PostgreSQL on the backend.',
+            'A full-stack crypto-currency portfolio and price tracker.',
         projectTechUsed: [
             'typescript',
             'react',
@@ -69,6 +68,7 @@ export default function ProjectSection() {
             pl={['0rem']}
             padding="1rem"
             id="Projects"
+            flexWrap="wrap"
         >
             <Heading m="auto" fontSize="3.5rem" mb="4rem">
                 My{' '}
@@ -76,7 +76,7 @@ export default function ProjectSection() {
                     Projects
                 </Box>
             </Heading>
-            <VStack gap="1rem">
+            <Flex gap="1rem" maxW="80%" m="auto" flexWrap="wrap">
                 {projects.map((p) => (
                     <ProjectCard
                         key={uuid()}
@@ -88,7 +88,7 @@ export default function ProjectSection() {
                         projectTechUsed={p.projectTechUsed}
                     />
                 ))}
-            </VStack>
+            </Flex>
         </Flex>
     )
 }
