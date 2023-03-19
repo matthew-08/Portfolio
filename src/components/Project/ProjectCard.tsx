@@ -70,7 +70,7 @@ export default function ProjectCard({
                         })}
                     </Flex>
                 </Container>
-                <Text px="1rem">{projectDescription}</Text>
+                <Text px="1.2rem">{projectDescription}</Text>
                 <HStack mt="auto" ml="auto">
                     <Button
                         as="a"
@@ -78,6 +78,10 @@ export default function ProjectCard({
                         variant="solid"
                         backgroundColor="purple.500"
                         border="1px"
+                        _hover={{
+                            backgroundColor: 'purple.500',
+                            borderColor: 'white ',
+                        }}
                         borderColor="purple.500"
                         fontSize="1rem"
                         p="1.4rem"

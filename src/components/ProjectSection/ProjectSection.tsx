@@ -25,14 +25,15 @@ const projects: Project[] = [
             'aws',
         ],
         projectSubtitle: 'Language Exchange Chat App',
-        projectDescription:
-            'Langooo is a real-time chat application aimed at language learners',
+        projectDescription: `Langooo is a real-time chat application aimed at language learners.  
+        The app app utilizes Socket.io, a Redis cache, Redux, 
+        and a PostgreSQL database.`,
     },
     {
         projectName: 'Noic /',
         projectSubtitle: 'Crypto Porfolio App',
         projectDescription:
-            'A full-stack crypto-currency portfolio and price tracker.',
+            'Noic is a cryptocurrency portfolio and price / market tracker.  The app provides users with the ability to save, edit, and delete their crypto transactions and favorite coins.',
         projectTechUsed: [
             'typescript',
             'react',
@@ -59,7 +60,8 @@ const projects: Project[] = [
     },
     {
         projectName: 'A Forum /',
-        projectSubtitle: 'Forum Application',
+        projectSubtitle:
+            'A forum application where users can login, create posts, and comment on other posts.  The app uses firebase on the backend and react on the frontend.',
         projectDescription: 'A full-stack forum application',
         projectTechUsed: ['typescript', 'react', 'firebase'],
         projectImg: forum,
@@ -110,12 +112,13 @@ export default function ProjectSection() {
             <Button
                 maxW="300px"
                 m="auto"
-                mt="1rem"
+                mt="2rem"
+                mb="2rem"
                 padding="1.7rem"
                 fontSize="1.2rem"
                 border="4px solid "
-                background="whiteAlpha.200"
-                borderColor="purple.400"
+                background="transparent"
+                borderColor="white"
             >
                 More Projects
             </Button>
