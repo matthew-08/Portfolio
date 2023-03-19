@@ -5,6 +5,9 @@ export type ProjectTech =
     | 'postgresql'
     | 'node.js'
     | 'express.js'
+    | 'redis'
+    | 'redux'
+    | 'aws'
 
 export interface Project {
     projectName: string

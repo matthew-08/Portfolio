@@ -5,6 +5,7 @@ import ProjectCard from '../Project/ProjectCard'
 import { Project } from '../../Types/types'
 import forum from '../../assets/forum.png'
 import dashboard from '../../assets/dashboard.png'
+import chat3 from '../../assets/chat3.png'
 
 const projects: Project[] = [
     {
@@ -33,9 +34,29 @@ const projects: Project[] = [
         ],
         projectImg: dashboard,
         links: {
-            live: '',
-            github: '',
+            live: 'https://noic-matthew-08.vercel.app/',
+            github: 'https://github.com/matthew-08/Crypto_Tracker',
         },
+    },
+    {
+        links: {
+            live: 'https://noic-matthew-08.vercel.app/',
+            github: 'https://github.com/matthew-08/Crypto_Tracker',
+        },
+        projectName: 'Langooo / ',
+        projectImg: chat3,
+        projectTechUsed: [
+            'postgresql',
+            'react',
+            'typescript',
+            'node.js',
+            'redis',
+            'redux',
+            'aws',
+        ],
+        projectSubtitle: 'Language Exchange Chat App',
+        projectDescription:
+            'Langooo is a real-time chat application aimed at language learners',
     },
 ]
 
@@ -47,6 +68,7 @@ export default function ProjectSection() {
             flexDir="column"
             pl={['0rem']}
             padding="1rem"
+            id="Projects"
         >
             <Heading m="auto" fontSize="3.5rem" mb="4rem">
                 My{' '}

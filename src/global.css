@@ -1,0 +1,26 @@
+
+.link {
+    position: relative;
+    border: none;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 6px;
+    bottom: -7px;
+    left: 0;
+    background-color: #805AD5;
+    transform-origin: center;
+    transition: transform 0.5s ease-out;
+}
+.link:hover::after {
+    transform: scaleX(1);
+    transform-origin: center;
+}
+
+a:hover {
+    text-decoration: 'none';
+}
