@@ -18,7 +18,7 @@ export default function Skills() {
                         icon="logos:postgresql"
                         width={isLargerThan900 ? '70px' : '50px'}
                     />
-                    <Text>Postgres</Text>
+                    <Text>PostgreSQL</Text>
                 </Container>
                 <Container>
                     <Icon
@@ -45,13 +45,6 @@ export default function Skills() {
                 </Container>
                 <Container>
                     <Icon
-                        icon="logos:javascript"
-                        width={isLargerThan900 ? '70px' : '50px'}
-                    />
-                    <Text>JavaScript</Text>
-                </Container>
-                <Container>
-                    <Icon
                         icon="skill-icons:react-dark"
                         width={isLargerThan900 ? '70px' : '50px'}
                     />
@@ -59,10 +52,17 @@ export default function Skills() {
                 </Container>
                 <Container>
                     <Icon
-                        icon="vscode-icons:file-type-html"
+                        icon="skill-icons:redux"
                         width={isLargerThan900 ? '70px' : '50px'}
                     />
-                    <Text>HTML</Text>
+                    <Text>Redux</Text>
+                </Container>
+                <Container>
+                    <Icon
+                        icon="logos:redis"
+                        width={isLargerThan900 ? '70px' : '50px'}
+                    />
+                    <Text>Redis</Text>
                 </Container>
             </VStack>
             <VStack>
@@ -75,10 +75,10 @@ export default function Skills() {
                 </Container>
                 <Container>
                     <Icon
-                        icon="skill-icons:css"
+                        icon="bxl:aws"
                         width={isLargerThan900 ? '70px' : '50px'}
                     />
-                    <Text>CSS</Text>
+                    <Text>AWS</Text>
                 </Container>
                 <Container>
                     <Icon

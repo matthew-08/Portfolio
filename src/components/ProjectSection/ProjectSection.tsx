@@ -76,7 +76,7 @@ export default function ProjectSection() {
     return (
         <Flex
             as="section"
-            mt="8rem"
+            mt="6rem"
             flexDir="column"
             pl={['0rem']}
             padding="1rem"
