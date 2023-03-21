@@ -67,7 +67,7 @@ export default function Header() {
                     display="flex"
                 >
                     {navOptions.map(({ name, to }) => (
-                        <li key={uuid()}>
+                        <li key={uuid()} className="link">
                             <HashLink smooth to={to}>
                                 {name}
                             </HashLink>

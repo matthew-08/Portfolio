@@ -41,6 +41,9 @@ export default function Hero() {
                     Matt
                 </Text>
             </Heading>
+            <Heading fontWeight="light" mb="4rem">
+                I'm a full stack web developer
+            </Heading>
             <HStack>
                 <Button
                     leftIcon={<Image src={pdf} filter={filterForImages} />}
