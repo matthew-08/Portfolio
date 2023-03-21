@@ -55,8 +55,8 @@ const projects: Project[] = [
         projectTechUsed: ['react', 'firebase', 'javascript'],
         projectImg: forum,
         links: {
-            live: '',
-            github: '',
+            live: 'https://forum-project-two.vercel.app/',
+            github: 'https://github.com/matthew-08/Forum-Project',
         },
     },
     {

@@ -29,8 +29,6 @@ a:hover {
     filter: invert(74%) sepia(23%) saturate(748%) hue-rotate(213deg) brightness(103%) contrast(96%);
 }
 
-
-
 .card h2 {
     color: 'white';
     transition: color 0.3s ease-in-out;
