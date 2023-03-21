@@ -1,5 +1,4 @@
-import React from 'react'
-import { Box, Flex, Heading, VStack, HStack, Button } from '@chakra-ui/react'
+import { Box, Flex, Heading, Button } from '@chakra-ui/react'
 import { v4 as uuid } from 'uuid'
 import ProjectCard from '../Project/ProjectCard'
 import { Project } from '../../Types/types'
@@ -10,10 +9,10 @@ import chat3 from '../../assets/chat3.png'
 const projects: Project[] = [
     {
         links: {
-            live: 'https://noic-matthew-08.vercel.app/',
-            github: 'https://github.com/matthew-08/Crypto_Tracker',
+            live: 'https://langoo-frontend-nf5u.vercel.app/',
+            github: 'https://github.com/matthew-08/langoo-frontend',
         },
-        projectName: 'Langooo / ',
+        projectName: 'Langooo',
         projectImg: chat3,
         projectTechUsed: [
             'postgresql',
@@ -23,17 +22,18 @@ const projects: Project[] = [
             'redis',
             'redux',
             'aws',
+            'chakraui',
         ],
         projectSubtitle: 'Language Exchange Chat App',
         projectDescription: `Langooo is a real-time chat application aimed at language learners.  
-        The app app utilizes Socket.io, a Redis cache, Redux, 
+        The app app utilizes Socket.io, a Redis cache, Redux, a session-based authentication system, 
         and a PostgreSQL database.`,
     },
     {
-        projectName: 'Noic /',
+        projectName: 'Noic',
         projectSubtitle: 'Crypto Porfolio App',
         projectDescription:
-            'Noic is a cryptocurrency portfolio and price / market tracker.  The app provides users with the ability to save, edit, and delete their crypto transactions and favorite coins.',
+            'Noic is a cryptocurrency portfolio and price tracker.  The app provides users with the ability to save, edit, and delete their crypto transactions and favorite coins.',
         projectTechUsed: [
             'typescript',
             'react',
@@ -48,10 +48,11 @@ const projects: Project[] = [
         },
     },
     {
-        projectName: 'A Forum /',
+        projectName: 'A Forum',
         projectSubtitle: 'Forum Application',
-        projectDescription: 'A full-stack forum application',
-        projectTechUsed: ['typescript', 'react', 'firebase'],
+        projectDescription: `A forum application wherein users can create posts and leave comments on posts.  
+        Authentication and storage for this application were implemented using Firebase while the front end utilizes React.`,
+        projectTechUsed: ['react', 'firebase', 'javascript'],
         projectImg: forum,
         links: {
             live: '',
@@ -59,16 +60,16 @@ const projects: Project[] = [
         },
     },
     {
-        projectName: 'A Forum /',
-        projectSubtitle:
-            'A forum application where users can login, create posts, and comment on other posts.  The app uses firebase on the backend and react on the frontend.',
-        projectDescription: 'A full-stack forum application',
-        projectTechUsed: ['typescript', 'react', 'firebase'],
-        projectImg: forum,
+        projectName: 'Battleship',
+        projectTechUsed: ['javascript', 'webpack', 'css', 'html'],
+        projectSubtitle: 'JavaScript Game',
+        projectDescription:
+            'This JavaScript-based battleship game clone prioritizes adherence to the MVC design principles and utilizes factory functions in order to create more composable and logical code.',
         links: {
-            live: '',
-            github: '',
+            github: 'https://github.com/matthew-08/top-Battleship',
+            live: 'https://top-battleship-six.vercel.app/',
         },
+        projectImg: '',
     },
 ]
 

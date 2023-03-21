@@ -28,7 +28,6 @@ export default function ProjectCard({
     projectTechUsed,
 }: Project) {
     const [isLargerThan500] = useMediaQuery('(min-width: 500px)')
-    const [isLargerThan900] = useMediaQuery('(min-width: 900px)')
     return (
         <Flex
             maxWidth={!isLargerThan500 ? '300px' : '450px'}
@@ -49,7 +48,7 @@ export default function ProjectCard({
                 <Heading mr="auto">{projectName}</Heading>
             </Center>
             <Flex padding="1rem" flexDir="column" flexGrow="1">
-                <Container minHeight="100px">
+                <Container minHeight="70px">
                     <Flex
                         align="center"
                         justifyContent="center"
@@ -60,6 +59,7 @@ export default function ProjectCard({
                         {projectTechUsed.map((tech) => {
                             return (
                                 <Box
+                                    key={uuid()}
                                     borderRadius="10px"
                                     padding="0.2rem"
                                     fontFamily="Fira Code, monospace"
@@ -70,7 +70,9 @@ export default function ProjectCard({
                         })}
                     </Flex>
                 </Container>
-                <Text px="1.2rem">{projectDescription}</Text>
+                <Text px="1.2rem" fontSize="1.1rem">
+                    {projectDescription}
+                </Text>
                 <HStack mt="auto" ml="auto">
                     <Button
                         as="a"

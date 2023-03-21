@@ -3,22 +3,42 @@ import {
     Heading,
     Flex,
     Image,
-    Link,
     HStack,
-    useColorModeValue,
     useMediaQuery,
     Button,
     IconButton,
     CloseButton,
     VStack,
-    StackDivider,
-    background,
 } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import { v4 as uuid } from 'uuid'
+import { useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
 import logo from '../assets/logo.png'
-import ToggleColorMode from './ToggleColorMode'
 import '../global.css'
+
+type NavOption = {
+    name: 'Projects' | 'Skills' | 'Resume' | 'Contact'
+    to: `/#${NavOption['name']}`
+}
+
+const navOptions: NavOption[] = [
+    {
+        name: 'Projects',
+        to: '/#Projects',
+    },
+    {
+        name: 'Skills',
+        to: '/#Skills',
+    },
+    {
+        name: 'Contact',
+        to: '/#Contact',
+    },
+    {
+        name: 'Resume',
+        to: '/#Resume',
+    },
+]
 
 export default function Header() {
     const [isLargerThan800] = useMediaQuery('(min-width: 800px)')
@@ -46,53 +66,13 @@ export default function Header() {
                     className="ul"
                     display="flex"
                 >
-                    <li>
-                        <HashLink
-                            smooth
-                            to="/#Projects"
-                            className="link"
-                            textDecoration="none"
-                            _hover={{
-                                textDecoration: 'none ',
-                            }}
-                        >
-                            Projects
-                        </HashLink>
-                    </li>
-                    <li>
-                        <HashLink
-                            smooth
-                            className="link"
-                            _hover={{
-                                textDecoration: 'none ',
-                            }}
-                            to="/#Skills"
-                        >
-                            Skills
-                        </HashLink>
-                    </li>
-                    <li>
-                        <HashLink
-                            className="link"
-                            _hover={{
-                                textDecoration: 'none ',
-                            }}
-                        >
-                            Resume
-                        </HashLink>
-                    </li>
-                    <li>
-                        <HashLink
-                            smooth
-                            className="link"
-                            _hover={{
-                                textDecoration: 'none ',
-                            }}
-                            to="/#Contact"
-                        >
-                            Contact
-                        </HashLink>
-                    </li>
+                    {navOptions.map(({ name, to }) => (
+                        <li key={uuid()}>
+                            <HashLink smooth to={to}>
+                                {name}
+                            </HashLink>
+                        </li>
+                    ))}
                 </HStack>
             ) : (
                 <IconButton
@@ -132,9 +112,17 @@ export default function Header() {
                     />
                 </Flex>
                 <VStack mb="auto" fontSize="1.4rem">
-                    <Button bg="none">Projects</Button>
-                    <Button bg="none">About</Button>
-                    <Button bg="none">Contact</Button>
+                    {navOptions.map(({ name, to }) => (
+                        <Button
+                            background="none"
+                            key={uuid()}
+                            onClick={() => setMenuDisplay('none')}
+                        >
+                            <HashLink smooth to={to}>
+                                {name}
+                            </HashLink>
+                        </Button>
+                    ))}
                 </VStack>
             </Flex>
         </Flex>

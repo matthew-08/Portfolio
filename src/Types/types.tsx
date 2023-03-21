@@ -8,6 +8,11 @@ export type ProjectTech =
     | 'redis'
     | 'redux'
     | 'aws'
+    | 'javascript'
+    | 'webpack'
+    | 'html'
+    | 'css'
+    | 'chakraui'
 
 export interface Project {
     projectName: string
